@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
+  <div>
+=======
   <div id="behalf">
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
     <div class="page__hd">
       <h1 class="page__title">Z Signature 定义作品集</h1>
       <p class="page__desc">有人说造作是家居设计界的G20</p>
@@ -82,6 +86,22 @@ export default {
 </script>
 <style scoped>
 .page__hd {
+<<<<<<< HEAD
+  margin-top: 30px;
+  text-align: center;
+}
+.page__title {
+  font-size: 18px;
+  margin-bottom:10px;
+}
+.page__desc {
+  font-size: 12px;
+  color: #ccc;
+}
+img {
+  width: 150px;
+  height: 150px;
+=======
   text-align: center;
 }
 .page__title {
@@ -94,16 +114,25 @@ export default {
 img {
   width: 3.9474rem;
   height: 3.9474rem;
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
 }
 .placeholder {
   text-align: center;
 }
 h3 {
+<<<<<<< HEAD
+  font-size: 14px;
+  color: #313131;
+}
+p {
+  font-size: 10px;
+=======
   font-size: 0.3684rem;
   color: #313131;
 }
 p {
   font-size: 0.2632rem;
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
   color: #ccc;
 }
 </style>

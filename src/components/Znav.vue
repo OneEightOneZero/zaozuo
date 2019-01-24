@@ -2,6 +2,20 @@
   <div>
     <div class="weui-navbar">
       <div class="wap-logo"></div>
+<<<<<<< HEAD
+      <div class="weui-navbar__item weui-bar__item_on">首页</div>
+      <div class="weui-navbar__item">全作品</div>
+      <div class="weui-navbar__item">我的</div>
+      <div class="weui-navbar__item">购物车</div>
+    </div>
+
+    <div class="weui-navbar nav_2" v-show="nav_show">
+      <div class="weui-navbar__item"><a href="#behalf">代表作</a></div>
+      <div class="weui-navbar__item"><a href="#found">发现</a></div>
+      <div class="weui-navbar__item"><a href="#ZnewGoods">新品区</a></div>
+      <div class="weui-navbar__item"><a href="#ZnewGoods">分类</a></div>
+      <div class="weui-navbar__item"><a href="#ZnewGoods">晒单</a></div>
+=======
       <div class="weui-navbar__item">首页</div>
       <router-link to="/app/Zworks/ZworksSofa/0" class="weui-navbar__item">全作品</router-link> 
       <router-link to="/app/my" class="weui-navbar__item">我的</router-link> 
@@ -30,11 +44,22 @@
     <div class="huiding" v-show="ding">
       <p class="iconfont icon-huidingbu ziti1" ref="huiding" @click="The_top"></p>
       <p class="iconfont icon-kefu ziti2"></p>
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
     </div>
   </div>
 </template>
 
 <script>
+<<<<<<< HEAD
+export default {
+  data() {
+    return {};
+  },
+
+  computed: {
+    nav_show(){
+      return this.$store.getters.get_nav_show
+=======
 import "../../libs/iconfont/iconfont.css";
 export default {
   data() {
@@ -46,11 +71,26 @@ export default {
   computed: {
     nav_show() {
       return this.$store.getters.get_nav_show;
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
     }
   },
 
   methods: {
     nav_show_0() {
+<<<<<<< HEAD
+      window.onscroll = ()=> {
+        var y = window.scrollY;
+        if (y > 280) {
+          this.$store.commit("upd_nav_show", true);
+        } else {
+          this.$store.commit("upd_nav_show", false);
+        }
+      };
+    }
+  },
+
+  created () {
+=======
       window.onscroll = () => {
         var y = window.scrollY;
         if (y > 280) {
@@ -79,6 +119,7 @@ export default {
   },
 
   created() {
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
     this.nav_show_0();
   }
 };
@@ -86,9 +127,15 @@ export default {
 
 <style scoped>
 .wap-logo {
+<<<<<<< HEAD
+  width: 100px;
+  height: 50px;
+  margin: 0 10px;
+=======
   width: 2.6316rem;
   height: 1.3158rem;
   margin: 0 0.2632rem;
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
   float: left;
   background: url(https://img.zaozuo.com/e566f2502a9b33ccfaf6341e138b06b0)
     no-repeat left;
@@ -103,11 +150,20 @@ export default {
 .weui-navbar:after {
   display: none !important;
 }
+<<<<<<< HEAD
+.nav_2{
+=======
 .nav_2 {
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
   position: fixed;
   top: 0;
   left: 0;
 }
+<<<<<<< HEAD
+a{
+  text-decoration: none;
+}
+=======
 a {
   text-decoration: none;
 }
@@ -142,4 +198,5 @@ a {
 .ziti1 {
   border-bottom: 0.0263rem solid #ccc;
 }
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
 </style>

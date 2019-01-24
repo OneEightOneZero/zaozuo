@@ -5,6 +5,17 @@
     <Zrepresent/>
     <Zfound/>
     <ZnewGoods/>
+<<<<<<< HEAD
+  </div>
+</template>
+<script>
+import Zswiper from "../components/Zswiper.vue";
+import Zrepresent from "../components/Zrepresent.vue";
+import Znav from "../components/Znav";
+import Zfound from "../components/Zfound";
+import ZnewGoods from "../components/ZnewGoods";
+
+=======
     <Zsort/>
     <Zdesign/>
     <Zdisplay/>
@@ -38,12 +49,22 @@ import Zdisplay from "../components/Zdisplay";
 import Zoutlet from "../components/Zoutlet";
 import Zfooter from "../components/Zfooter";
 
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
 export default {
   components: {
     Zswiper,
     Zrepresent,
     Znav,
     Zfound,
+<<<<<<< HEAD
+    ZnewGoods
+  }
+};
+</script>
+<style scoped>
+    
+</style>
+=======
     ZnewGoods,
     Zsort,
     Zdesign,
@@ -56,3 +77,4 @@ export default {
 
 <style scoped>
 </style>
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d

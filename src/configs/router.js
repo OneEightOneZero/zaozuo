@@ -1,4 +1,47 @@
 import Vue from 'vue'
+<<<<<<< HEAD
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import App from '../App.vue'
+import Home from '../pages/Home.vue'
+import Details from '../pages/Details.vue'
+import Login from '../components/Zloginbody.vue'
+
+
+
+const routes = [
+    {
+        path:'/app',
+        name:'app',
+        component:App,
+        children:[
+            {
+                path:'/home',
+                name:'home',
+                component:Home
+            }
+        ]
+    }, 
+    {
+        path: '/details',
+        name: 'details',
+        component: Details
+    },
+    {
+        path:'/login',
+        name:'login',
+        component:Login
+    },
+    {
+        path: '/',
+        redirect: {
+            name: 'home'
+        }
+    }
+]
+
+=======
 // 引入路由模块
 import VueRouter from 'vue-router'
 // 显式安装该模块
@@ -74,10 +117,13 @@ const routes = [
 
 
 //实例该路由
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
 const router = new VueRouter({
     routes
 })
 
+<<<<<<< HEAD
+=======
 // 路由守卫
 // router.beforeEach((to, from, next) => {
 //     let token = localStorage.getItem('token');
@@ -90,4 +136,5 @@ const router = new VueRouter({
 //     }
 // })
 
+>>>>>>> f615b55989dd91945cbccde824ef340648f9220d
 export default router
