@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="iconfont icon-houtui houtui"></p>
+    <p class="iconfont icon-houtui houtui" @click="huitui"></p>
     <p class="logo">
         <span class="ziti">造作ZAOZUO</span>
     </p>
@@ -9,7 +9,13 @@
 
 <script>
 import "../../libs/iconfont/iconfont.css";
-export default {};
+export default {
+  methods: {
+    huitui(){
+      this.$router.go(-1);
+    }
+  }
+};
 </script>
 
 <style scoped>

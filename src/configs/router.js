@@ -25,7 +25,7 @@ const routes = [
 
             {  
                 path: 'my', name: 'my', component: My, beforeEnter: (to, from, next) => {
-                    let token = localStorage.getItem('token');
+                    let token = localStorage.getItem('zaozuo_token');
                     if(token != null || to.path == '/register'){
                         next()
                     }else{

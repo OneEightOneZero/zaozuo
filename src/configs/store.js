@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        nav_show: false
+        nav_show: false,
+        ip:'http://39.105.178.245:3000/users'
     },
 
     //获取数据方法
