@@ -1,25 +1,24 @@
 import Vue from 'vue'
-import App from './App.vue'
+// import App from './App.vue'
 import 'weui'
-<<<<<<< HEAD
 import './style/weui.css'
 
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-// require styles
-import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper, /* { default global options } */)
-Vue.config.productionTip = false
+import router from './configs/router.js'
 
-new Vue({
-=======
-
-Vue.config.productionTip = false
-
-//引入仓库
 import store from './configs/store.js'
 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
+
+import axios from 'axios'
+Vue.prototype.$axios = axios
+
+
+Vue.config.productionTip = false
+
 new Vue({
+  router,
   store,
->>>>>>> 8c426edb62dc472cf4a3efd949f45ffe842749df
-  render: h => h(App),
+  render: h => h('router-view'),
 }).$mount('#app')

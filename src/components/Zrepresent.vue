@@ -82,10 +82,12 @@ export default {
 </script>
 <style scoped>
 .page__hd {
+  margin-top: 30px;
   text-align: center;
 }
 .page__title {
   font-size: 18px;
+  margin-bottom:10px;
 }
 .page__desc {
   font-size: 12px;
