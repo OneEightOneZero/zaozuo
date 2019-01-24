@@ -6,7 +6,8 @@ Vue.use(VueRouter)
 
 //一层路由
 import App from '../App.vue'
-import Register from '../pages/Register.vue'
+import Log_reg from '../pages/Log_reg.vue'
+import Details from '../pages/Details.vue'
 
 //二层路由
 import Car from '../pages/Car.vue'
@@ -16,20 +17,22 @@ import My from '../pages/My.vue'
 
 //二层路由
 const routes = [
-    { path: '/register', name: 'register', component: Register },
+    { path: '/log_reg', name: 'log_reg', component: Log_reg },
+
+    { path: '/details', name: 'details', component: Details },
 
     {
         path: '/app', name: 'app', component: App,
         children: [
             { path: 'home', name: 'home', component: Home },//主页路由
 
-            {  
+            {
                 path: 'my', name: 'my', component: My, beforeEnter: (to, from, next) => {
                     let token = localStorage.getItem('zaozuo_token');
-                    if(token != null || to.path == '/register'){
+                    if (token != null || to.path == '/log_reg') {
                         next()
-                    }else{
-                        router.push({name: 'register'});
+                    } else {
+                        router.push({ name: 'log_reg' });
                     }
                 }
             },

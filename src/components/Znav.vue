@@ -74,7 +74,7 @@ export default {
           clearInterval(this.times);
         }
         window.scrollTo(0, oy);
-      }, 8);
+      }, 5);
     }
   },
 

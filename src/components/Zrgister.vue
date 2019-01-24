@@ -155,7 +155,7 @@ export default {
   text-align: center;
   font-size: 14px;
 }
-.forpassw a {
-  color: #ccc;
+.forpassw span {
+  color: #555;
 }
 </style>
