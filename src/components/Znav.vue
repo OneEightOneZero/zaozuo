@@ -3,7 +3,7 @@
     <div class="weui-navbar">
       <div class="wap-logo"></div>
       <div class="weui-navbar__item">首页</div>
-      <div class="weui-navbar__item">全作品</div>
+      <router-link to="/app/Zworks/ZworksSofa/0" class="weui-navbar__item">全作品</router-link> 
       <router-link to="/app/my" class="weui-navbar__item">我的</router-link> 
       <router-link to="/app/car" class="weui-navbar__item">购物车</router-link>
     </div>
