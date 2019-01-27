@@ -34,14 +34,14 @@ import ZworksGift from '../works/ZworksGift.vue'//礼品
 const routes = [
     { path: '/log_reg', name: 'log_reg', component: Log_reg },
 
-    { path: '/details', name: 'details', component: Details },
+    { path: '/details/:id', name: 'details', component: Details },
 
     {
         path: '/app', name: 'app', component: App,
         children: [
-            { path: 'home', name: 'home', component: Home },//主页路由
+            { path: 'home', name: 'home', component: Home },//首页路由
 
-            {
+            {                                               //我的路由及路由拦截
                 path: 'my', name: 'my', component: My, beforeEnter: (to, from, next) => {
                     let token = localStorage.getItem('zaozuo_token');
                     if (token != null || to.path == '/log_reg') {
@@ -50,10 +50,11 @@ const routes = [
                         router.push({ name: 'log_reg' });
                     }
                 }
-            },
+            },                                              
+                                                        
             { path: 'car', name: 'car', component: Car },//购物车路由
-               //全作品路由
-            {path: 'Zworks', name: 'Zworks', component: Zworks,
+               
+            {path: 'Zworks', name: 'Zworks', component: Zworks,//全作品路由
                 children: [
                     { path: 'ZworksSofa/:id', name: 'ZworksSofa', component: ZworksSofa},//沙发
                     { path: 'Zworksbed/:id', name: 'Zworksbed', component: Zworksbed},//床具

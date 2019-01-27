@@ -6,69 +6,13 @@
       <p class="page__desc">其实我们更关心如何从大师走到大众</p>
     </div>
     <div class="page__bd page__bd_spacing">
-      <div class="weui-flex">
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
-          </div>
-        </div>
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="weui-flex">
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
-          </div>
-        </div>
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="weui-flex">
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
-          </div>
-        </div>
-        <div class="weui-flex__item">
-          <div class="placeholder">
-            <a href>
-              <img src="../assets/19.jpg" alt>
-              <h3>云团沙发升级版®</h3>
-              <p>2999</p>
-              <p>三色可选</p>
-            </a>
+      <div class="weui-flex__item" v-for="(item, idx) in goods" :key="idx">
+        <div class="placeholder">
+          <div @click="tiaozhuan(item._id)">
+            <img :src="item.imgurl">
+            <h3 v-text="item.goodsname"></h3>
+            <p v-text="item.price"></p>
+            <p>{{`${item.color.length}色可选`}}</p>
           </div>
         </div>
       </div>
@@ -77,7 +21,23 @@
 </template>
 <script>
 export default {
-
+  data() {
+    return {
+      goods: []
+    };
+  },
+  methods: {
+    async goods0() {
+      let shuju = await this.$axios.get(`${this.$store.state.ip}/goods`);
+      this.goods = shuju.data;
+    },
+    tiaozhuan(id){
+      this.$router.push({name:'details',  params:{id: id }})
+    }
+  },
+  created() {
+    this.goods0();
+  }
 };
 </script>
 <style scoped>
@@ -90,6 +50,7 @@ export default {
 .page__desc {
   font-size: 0.3158rem;
   color: #ccc;
+  margin: 5px 0;
 }
 img {
   width: 3.9474rem;
@@ -105,5 +66,12 @@ h3 {
 p {
   font-size: 0.2632rem;
   color: #ccc;
+}
+.weui-flex__item {
+  width: 3.9474rem;
+  height: 4.6842rem;
+  margin-left: 0.7895rem;
+  display: inline-block;
+  text-align: center;
 }
 </style>

@@ -3,14 +3,14 @@
     <div class="weui-flex">
       <div class="weui-flex__item">
         <div class="placeholder">
-          <img src="../assets/dengzi.jpg" alt>
+          <img :src="res.imgurl" alt>
         </div>
       </div>
     </div>
     <div class="weui-flex">
       <div class="weui-flex__item">
         <div class="placeholder">
-          <p class="goodsname">造作花间实木小桌®</p>
+          <p class="goodsname" v-text="res.goodsname"></p>
         </div>
       </div>
       <div class="weui-flex__item">
@@ -31,14 +31,35 @@
     <div class="weui-flex">
       <div class="weui-flex__item">
         <div class="placeholder">
-          <p class="price">￥899</p>
+          <p class="price" v-text="res.price"></p>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      res: ''
+    }
+  }, 
+
+  methods: {
+    async shuju() {
+      let idx = this.$route.params.id;
+      let data = await this.$axios.get(`${this.$store.state.ip}/details`, {
+        params: {
+          'id': idx
+        }
+      });
+      this.res = data.data[0];
+    }
+  },
+  created() {
+    this.shuju();
+  }
+};
 </script>
 <style scoped>
 img {
@@ -54,15 +75,16 @@ img {
   text-align: left;
   font-size: 16px;
 }
-.collect{
-    text-align: right;
-    font-size: 14px;
-    padding-right: 20px;
-    padding-top: 4px;
+.collect {
+  text-align: right;
+  font-size: 14px;
+  padding-right: 20px;
+  padding-top: 4px;
 }
-.Engoodsname,.price{
-    font-size: 14px;
-    padding-left: 20px;
-    margin:3px 0;
+.Engoodsname,
+.price {
+  font-size: 14px;
+  padding-left: 20px;
+  margin: 3px 0;
 }
 </style>

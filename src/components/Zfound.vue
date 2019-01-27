@@ -33,5 +33,6 @@ export default {};
 <style scope>
 .ass {
   padding: 0.8rem 0.5rem;
+  clear: both;
 }
 </style>
